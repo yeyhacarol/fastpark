@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <link rel="stylesheet" href="css/vehicle-cadaster.css" />
+
+  <script src="./scripts/setDateTimeEnter.js" defer></script>
+  <script type="module" src="./scripts/entrada/listagensApp.js"></script>
+  <script type="module" src="./scripts/entrada/clienteApp.js"></script>
+  <title>Cadastro de veículos</title>
+</head>
+
+<body>
+  <main>
+    <div class="left-container">
+      <div class="icons-container">
+        <a href="parking-controll.html"><img class="icon" src="img/parking-icon.png" /></a>
+        <a href="index.html"><img class="icon" src="img/vehicle-icon.png" /></a>
+        <a href="historic.html"><img class="icon" src="img/historic.png" /></a>
+        <a href="open-historic.html"><img class="icon" src="img/out-car.png" /></a>
+      </div>
+      <div class="logo-container">
+        <img src="img/logo.png" alt="car-parking-logo" class="logo" />
+      </div>
+      <div class="left-container-footer">
+        <span class="left-container-footer-text">
+          © 2022 Fast Park. All rights reserved.
+        </span>
+      </div>
+    </div>
+    <div class="right-container">
+      <div class="icon-selected-container">
+        <img class="selected-icon" src="img/vehicle-icon.png" />
+      </div>
+      <div class="title-container">
+        <span class="title">Controle de veículos</span>
+      </div>
+      <div class="lines-container">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <form id="entry-form">
+        <div class="client-info-container">
+          <span class="info-title">| cliente</span>
+          <div class="infos-container">
+            <div class="client-info">
+              <span class="info">Nome:</span>
+              <input type="text" id="nome"
+                onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122 || event.charCode == 32" required>
+            </div>
+            <div class="client-info">
+              <span class="info">Telefone(opcional):</span>
+              <input type="text" id="telefone" pattern="^\([0-9]{2}\) ?[0-9]{5}-?[0-9]{4}$" >
+            </div>
+          </div>
+        </div>
+        <div class="client-info-container">
+          <span class="info-title">| veículo</span>
+          <div class="infos-container">
+            <div class="client-info">
+              <span class="info">Placa:</span>
+              <input type="text" id="placa" required>
+            </div>
+            <div class="client-info">
+              <span class="info">Categoria:</span>
+              <select id="categoria" required>
+                <option value="" selected>Selecione uma categoria</option>
+                <option value="1">Carro</option>
+                <option value="2">Moto</option>
+              </select>
+            </div>
+          </div>
+          <div class="client-info-container">
+            <div class="infos-container">
+              <div class="client-info">
+                <span class="info">Cor:</span>
+                <select id="cores" required>
+                  <option value="" selected>Selecione uma categoria</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="client-info-container">
+          <span class="info-title">| vaga</span>
+          <div class="infos-container">
+            <div class="client-info">
+              <span class="info">Vaga:</span>
+              <select id="vagas-livres" required>
+                
+              </select>
+            </div>
+            <div class="client-info" id="hour">
+  
+            </div>
+          </div>
+        </div>
+        <div class="submit-container">
+          <input id="submit" type="button" value="SALVAR" />
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>

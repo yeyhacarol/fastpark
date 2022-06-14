@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR" id="html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/parking-controll.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
+
+    <script type="module" src="./scripts/vagas/vagasApp.js"></script>
+    <script type="module" src="./scripts/valor/valoresApp.js"></script>
+    <script type="module" src="./scripts/modal.js"></script>
+    <title>Controle do estacionamento</title>
+</head>
+
+<body>
+    <section class="parking">
+        <img src="img/parking-icon.png" alt="controle do estacionamento" title="página atual" class="actual-page">
+        <div class="controlling-parking-container">
+            <div class="parking-title parking">
+                <p>Controle do estacionamento</p>
+                <div class="lineup">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="parking-container">
+                <div class="parking-lot-container">
+                    <p>| estacionamento</p>
+                    <p>Você está no Fast Park</p>
+                    <p>Rua Elton Silva, 905 - Centro, Jandira - SP, 06600-025</p>
+                </div>
+
+                <form class="parking-vacancy" id="parking-vacancy-form">
+                    <p>| vagas</p>
+                    <div class="vacancies">
+                        <div class="floor-hall">
+                            <div class="floor">
+                                <span>Piso:</span>
+                                <input type="number" id="floor"
+                                    onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+                            </div>
+                            <div class="hall">
+                                <span>Corredor:</span>
+                                <input type="number" id="hall"
+                                    onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+                            </div>
+                            <div class="preferencial">
+                                <input type="checkbox" name="preferencial" id="preferencial"><span>Preferencial</span>
+                            </div>
+                        </div>
+                        <div class="vacancy-type">
+                            <div class="vacancy">
+                                <span>Vaga:</span>
+                                <input type="text" maxlength="10" placeholder="Nome da vaga" id="initials" required>
+                            </div>
+                            <div class="type">
+                                <span>Tipo:</span>
+                                <select name="tipoVeiculo" id="type" required>
+                                    <option value="" selected>Selecione um tipo</option>
+                                    <option value="1">Carro</option>
+                                    <option value="2">Moto</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-container">
+                        <div id="save-vacancy">
+                            <input type="button" value="SALVAR">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="parking-controll-content">
+            <img src="img/parking-controll-background.png" alt="background" class="background">
+            <div class="controll-pannel">
+                <a href="parking-controll.html"><img src="img/parking-icon.png" alt="controle do estacionamento"
+                        title="controle do estacionamento"></a>
+                <a href="index.html"><img src="img/vehicle-icon.png" alt="controle de veículos"
+                        title="controle de veículos"></a>
+                <a href="historic.html"><img src="img/historic.png" alt="histórico" title="histórico"></a>
+                <a href="open-historic.html"><img src="img/out-car.png" alt="ajustar saída" title="inserir saída"></a>
+
+            </div>
+            <div class="logo">
+                <img src="img/logo.png" alt="logo fast park">
+            </div>
+            <div class="right-reserved">
+                <p>&copy; 2022 Fast Park. All rights reserved.</p>
+            </div>
+        </div>
+
+    </section>
+    <div class="walking-header">
+        <!-- <div class="walking-car">
+            <img src="img/car-gif.gif" alt="">
+        </div> -->
+    </div>
+    <section class="your-vacancies">
+        <div class="parking-title">
+            <p>Suas vagas</p>
+            <div class="lineup">
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="vacancy-container">
+            <div class="vacancy-lot">
+                <p>| vagas existentes</p>
+            </div>
+            <div class="vacancy-table">
+                <div class="label">
+                    <span>Piso</span>
+                    <span>Corredor</span>
+                    <span>Vaga</span>
+                    <span>Tipo</span>
+                    <span>Ações</span>
+                </div>
+                <div id="localization">
+
+                </div>
+            </div>
+        </div>
+        <div class="vacancy-container">
+            <div class="vacancy-lot">
+                <p>| valor das vagas</p>
+            </div>
+            <div class="vacancy-table price">
+                <div class="label">
+                    <span>Tipo</span>
+                    <span>Primeira hora</span>
+                    <span>Demais horas</span>
+                    <span>Ações</span>
+                </div>
+                <div id="values">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal">
+        <div class="modal-content">
+            <div class="btn-out">
+                <div id="out" style="background-color: #7F3E71;">X</div>
+            </div>
+            <form class="parking-values">
+                <div class="allowed-vehicule">
+                    <span>Tipo:</span>
+                    <input type="text" id="tipo" disabled>
+                </div>
+                <div class="first-hour">
+                    <span>Primeira hora:</span>
+                    <input type="text" placeholder="10" maxlength="6" id="hora-inicial"  required
+                        onkeypress="return event.charCode >= 48 || event.charCode <= 57 || event.charCode == 46">
+                </div>
+                <div class="other-hours">
+                    <span>Demais horas:</span>
+                    <input type="text" placeholder="3" maxlength="6" id="demais-horas"
+                        title="valor será somado ao de primeira hora" required
+                        onkeypress="return event.charCode >= 48 || event.charCode <= 57 || event.charCode == 46">
+                </div>
+                <div id="save-value">
+                    <input type="button" value="SALVAR">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

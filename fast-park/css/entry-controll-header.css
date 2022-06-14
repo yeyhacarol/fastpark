@@ -1,0 +1,70 @@
+header {
+    width: 100%;
+    height: 480px;
+
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    background: url(../img/entry-controll-background.png) no-repeat;
+    background-size: cover;
+    background-position-x: center;
+}
+
+header .actual-page {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+header .controll-pannel {
+    left: 10px;
+}
+
+.plaque-filter {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 8%;
+}
+
+.plaque-filter input {
+    width: clamp(275px, 45vw, 350px);
+    height: 40px;
+
+    border: 1px solid #000;
+    border-radius: 5px;
+
+    padding: 10px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
+.icon {
+    background: url(../img/search.png) no-repeat left;
+    background-size: clamp(20px, 5vw, 25px);
+    background-position: 98%;
+}
+
+.historic {
+    width: 85%;
+
+    margin: auto;
+}
+
+.historic p {
+    font-size: clamp(0.875rem, 2vw, 1.4rem);
+    color: #DF265E;
+
+    margin-bottom: 3%;
+}
+
+.label.actions img {
+    width: clamp(20px, 5vw, 25px);
+    height: clamp(20px, 5vw, 25px);
+}

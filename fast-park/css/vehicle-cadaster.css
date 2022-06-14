@@ -1,0 +1,233 @@
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-container {
+  display: flex;
+  width: 40%;
+  min-width: 200px;
+  height: 100vh;
+  justify-content: space-between;
+  flex-direction: column;
+
+  background-image: url("../img/vehicule-cadaster.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+.icons-container {
+  width: 100%;
+  height: 70px;
+  padding: 10px 0px 0px 10px;
+  gap: 10px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.icon,
+.selected-icon {
+  width: clamp(35px, 5vw, 55px);
+  height: clamp(35px, 5vw, 55px);
+
+  cursor: pointer;
+
+}
+
+.right-container {
+  display: flex;
+  flex-grow: 1;
+  overflow-x: hidden;
+  flex-direction: column;
+}
+
+.logo-container {
+  width: 100%;
+  height: 20%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: clamp(125px, 25vw, 200px);
+}
+
+.left-container-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 20px;
+}
+
+.left-container-footer-text {
+  font-size: clamp(0.688rem, 2vw, 0.875rem);
+    font-weight: 300;
+  text-align: center;
+  color: #fff;
+}
+
+.icon-selected-container {
+  /* width: 100%;
+  height: 70px;
+  padding: 10px;
+
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row; */
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.title-container {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+  padding-top: 20px;
+}
+
+.title {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  font-weight: bold;
+  text-align: center;
+}
+
+.lines-container {
+  height: 1.5px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  padding-left: 30%;
+  padding-right: 30%;
+  margin-bottom: 4%;
+}
+
+.line {
+  height: 100%;
+  width: 40%;
+
+  background-color: black;
+}
+
+.client-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-title {
+  font-size: clamp(0.875rem, 2vw, 1.4rem);
+  color: #004197;
+  font-weight: 600;
+  padding-left: 13%;
+  margin-bottom: 10px;
+}
+
+.client-info {
+  display: flex;
+  min-height: 100px;
+  flex-direction: column;
+}
+
+.info {
+  font-size: clamp(0.875rem, 2vw, 1.4rem);
+  font-weight: 500;
+
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 10px;
+}
+
+.infos-container {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  padding-left: 13%;
+  padding-right: 13%;
+}
+
+select,
+input {
+  width: clamp(220px, 48vw, 290px);
+  height: 40px;
+
+  border: 1px solid;
+  border-radius: 5px;
+
+  padding-left: 10px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+}
+
+#submit {
+  width: clamp(100px, 15vw, 145px);
+  height: 50px;
+
+  border: 1px solid;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  background-color: #004197;
+  color: #fff;
+
+
+  font-size: clamp(0.9rem, 2vw, 1.4rem);
+  font-weight: lighter;
+}
+
+.submit-container {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-container {
+    width: 0px;
+    height: 200px;
+    background: none;
+  }
+
+  .logo-container {
+    display: none;
+  }
+
+  .left-container-footer {
+    display: none;
+  }
+}

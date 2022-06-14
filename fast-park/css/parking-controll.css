@@ -1,0 +1,364 @@
+/* menu lateral */
+.parking-controll-content {
+    width: clamp(160px, 45vw, 100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.controll-pannel {
+    display: flex;
+
+    cursor: pointer;
+    gap: 10px;
+
+    z-index: 10;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+.controll-pannel img,
+.actual-page,
+header .actual-page {
+    width: clamp(35px, 5vw, 55px);
+    height: clamp(35px, 5vw, 55px);
+}
+
+.parking .actual-page {
+    width: clamp(45px, 5vw, 65px);
+    height: clamp(45px, 5vw, 65px);
+
+    padding: 10px 0px 0px 10px;
+}
+
+.logo {
+    width: clamp(125px, 25vw, 200px);
+
+    position: absolute;
+}
+.logo img {
+    width: inherit;
+}
+
+.right-reserved {
+    position: absolute;
+    bottom: 25px;
+}
+.right-reserved p {
+    font-size: clamp(0.688rem, 2vw, 0.875rem);
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+}
+
+/* controle do estacionamento */
+/* "header" */
+.parking {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.controlling-parking-container {
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parking-title {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 10px;
+    margin-bottom: 8%;
+}
+.parking-title.parking {
+    padding-top: 5%;
+}
+.parking-title p {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-weight: bold;
+    text-align: center;
+}
+
+.lineup {
+    width: clamp(200px, 50vw, 470px);
+    height: 1px;
+
+    display: flex;
+
+    padding: 0px 10px;
+    gap: 10%;
+}
+.line {
+    width: inherit;
+    height: inherit;
+
+    border: 1px solid;
+}
+
+/* estacionamento, vagas, valores */
+.parking-lot-container {
+    margin-bottom: 10%;
+}
+.parking-lot-container p:nth-child(1) {
+    margin-bottom: 2%;
+}
+.parking-lot-container p:nth-child(1),
+.parking-vacancy p,
+.vacancy-lot {
+    color: #7F3E71;
+    margin-bottom: 3%;
+}
+.parking-lot-container p,
+.parking-vacancy p,
+.vacancies span,
+.vacancy-values span,
+.vacancy-container p,
+/* modal */
+.modal-content span {
+    font-size: clamp(0.875rem, 2vw, 1.4rem);
+}
+
+/* vagas, valores */
+.parking-values {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 30px;
+}
+.parking-values span,
+.exit-time span {
+    margin-bottom: 2%;
+}
+
+.vacancies,
+.vacancy-values {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: clamp(0px, 3vw, 60px) !important;
+
+    margin-bottom: 5%;
+}
+
+.floor, 
+.hall,
+.vacancy,
+.type {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 35px;
+    gap: 10px;
+}
+/* modal */
+.name,
+.plaque,
+.departure-time,
+.allowed-vehicule,
+.first-hour,
+.other-hours {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+input[type=text],
+input[type=number],
+select,
+/* modal */
+input[type=datetime-local] {
+    width: clamp(170px, 48vw, 290px);
+    height: 40px;
+
+    border: 1px solid;
+    border-radius: 5px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.9rem, 1.4vw, 1.4rem);
+
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+input[type=text], 
+input[type=number] {
+    padding-left: 10px;
+}
+.preferencial {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    gap: 3%;
+
+    font-size: clamp(0.7rem, 1.4vw, 1.4rem);
+}
+
+input[type=checkbox] {
+    width: 25px;
+    height: 40px;
+
+    border: 1px solid #000;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+
+/* botão */
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-container:nth-child(odd) {
+    margin-bottom: 8%;
+}
+
+#save-vacancy,
+/* #save-value, */
+input[type=submit],
+input[type=button] {
+    width: clamp(100px, 15vw, 145px);
+    height: 50px;
+
+    border-radius: 5px;
+    background-color: #7F3E71;
+    cursor: pointer;
+
+    border: none;
+
+    font-size: clamp(0.9rem, 2vw, 1.4rem);
+    font-weight: 300;
+    color: #fff;
+}
+
+/* suas vagas */
+/* vagas existentes */
+.your-vacancies {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.walking-header {
+    width: 100%;
+    height: 70px;
+
+    margin-bottom: 4%;
+
+    background-color: rgba(127, 62, 113, .25);
+}
+
+.vacancy-table,
+.history-table {
+    width: clamp(290px, 55vw, 990px);
+    min-height: 200px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: auto;
+    margin-bottom: 10%;
+
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.history-table .label {
+    height: 70px;
+}
+.history-table #values span,
+.label.history span {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+}
+#values input {
+    width: 100%;
+    font-size: 14px;
+}
+
+.label {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid #000;
+}
+
+.label span {
+    width: 100%;
+
+    font-size: clamp(0.875rem, 2vw, 1.4rem);
+    
+    text-align: center;
+}
+.sigla {
+    text-transform: uppercase;
+}
+
+.label.actions {
+    display: flex;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+    cursor: pointer;
+}
+
+.label img {
+    width: clamp(20px, 5vw, 25px);
+    height: clamp(20px, 5vw, 25px);
+}
+
+.label.actions img:nth-child(2) {
+    width: clamp(20px, 5vw, 25px);
+    height: clamp(20px, 5vw, 25px);
+}
+
+#localization,
+#values {
+    width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+    .parking-controll-content {
+        width: 0px;
+        background: none;
+    }
+    .parking-controll-content .logo {
+        display: none;
+    }
+    .parking-controll-content .right-reserved {
+        display: none;
+    }
+}

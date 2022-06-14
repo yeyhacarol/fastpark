@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR" id="html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/parking-controll.css">
+    <link rel="stylesheet" type="text/css" href="css/entry-controll-header.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
+
+    <script type="module" src="./scripts/saida/saidaApp.js"></script>
+    <title>Histórico de entrada</title>
+</head>
+
+<body>
+    <header>
+        <img src="img/out-car.png" alt="controle de saída" title="página atual" class="actual-page">
+        <div class="controll-pannel">
+            <a href="parking-controll.html"><img src="img/parking-icon.png" alt="controle do estacionamento"
+                    title="controle do estacionamento"></a>
+            <a href="index.html"><img src="img/vehicle-icon.png" alt="controle de veículos"
+                    title="controle de veículos"></a>
+            <a href="historic.html"><img src="img/historic.png" alt="histórico" title="histórico"></a>
+            <a href="open-historic.html"><img src="img/out-car.png" alt="ajustar saída" title="inserir saída"></a>
+        </div>
+        <div class="logo">
+            <img src="img/logo.png" alt="logo fast park">
+        </div>
+        <div class="right-reserved">
+            <p>&copy; 2022 Fast Park. All rights reserved.</p>
+        </div>
+    </header>
+    <div class="plaque-filter">
+        <input type="text" placeholder="filtro por placa" class="icon">
+    </div>
+    <div class="historic">
+        <p>| histórico de entrada</p>
+        <div class="history-table">
+            <div class="label history">
+                <span>Placa</span>
+                <span>Vaga</span>
+                <span>Hora Entrada</span>
+                <span>Hora Saída</span>
+                <span>Ações</span>
+            </div>
+            <div id="values">
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
