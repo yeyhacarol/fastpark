@@ -30,6 +30,10 @@ const updateTable = async () => {
             let dateValue = event.target.parentElement.previousElementSibling.value
             let data = event.target.parentElement.parentElement.children
 
+            /* console.log(data[2].innerText)
+            console.log(dateValue) */
+            console.log(data[1].dataset.id)
+
             const entry = {
                 "data_entrada": data[2].innerText,
                 "data_saida": dateValue,

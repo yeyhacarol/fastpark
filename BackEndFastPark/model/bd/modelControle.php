@@ -493,16 +493,38 @@ function insertControle($dados)
 function updateControle($dados)
 {
 
+    $entrada = explode(' ', $dados['data_entrada']);
+    $saida = explode(' ', $dados['data_saida']);
+
+    //print_r($dados['id']);
+
+
     $resultado = (bool) false;
 
     $conexao = conectarMysql();
 
-    $sql = "update tbl_controle set
-                        data_entrada = '" .   $dados['data_entrada'] . "',
-                        data_saida = '" .     $dados['data_saida'] . "',
+    if(count($entrada) >= 9 || count($saida) >= 9 ){
+    
+        $sql = "update tbl_controle set
+                        data_entrada = concat('".$entrada[0]."',' ', concat(substring('".$entrada[1]."', 1,2), ':', substring('".$entrada[1]."', 5,2), ':', substring('".$entrada[1]."', 9,2))), 
+                        data_saida =  concat('".$saida[0]."',' ', concat(substring('".$saida[1]."', 1,2), ':', substring('".$saida[1]."', 5,2), ':', substring('".$saida[1]."', 9,2))), 
                         id_veiculo = " .     $dados['id_veiculo'] . ",
                         id_vaga = " .        $dados['id_vaga'] .
         " where id = " . $dados['id'] . ";";
+    
+    }else{
+        $sql = "update tbl_controle set
+                    data_entrada = '".   $dados['data_entrada']."',
+                    data_saida = '".     $dados['data_saida']."',
+                    id_veiculo = ".     $dados['id_veiculo'].",
+                    id_vaga = ".        $dados['id_vaga']." 
+            where id = ". $dados['id'].";";
+    }
+
+    
+    print_r($sql);
+    die;
+    //die(print_r($sql));
 
     if (mysqli_query($conexao, $sql)) {
 
